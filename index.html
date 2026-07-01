@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>咪咕球搭子世界杯季报名</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page" aria-label="咪咕球搭子世界杯季报名页">
+      <section class="poster" aria-label="活动报名海报">
+        <form class="signup-panel" id="signupForm" novalidate>
+          <div class="panel-copy">
+            <p class="kicker">球迷限定</p>
+            <h1>立即报名</h1>
+          </div>
+
+          <label class="field">
+            <span>用户名</span>
+            <input id="username" name="username" type="text" autocomplete="name" placeholder="请输入用户名" maxlength="20" required />
+          </label>
+
+          <label class="field">
+            <span>手机号</span>
+            <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="请输入手机号" maxlength="11" required />
+          </label>
+
+          <button class="submit-btn" type="submit">
+            <span class="btn-icon" aria-hidden="true"></span>
+            <span>报名提交</span>
+          </button>
+
+          <p class="form-message" id="formMessage" aria-live="polite"></p>
+        </form>
+
+        <section class="success-panel" id="successPanel" aria-live="polite" hidden>
+          <p class="kicker">报名成功</p>
+          <h2>已锁定观赛席位</h2>
+          <p id="successText"></p>
+          <button class="secondary-btn" id="resetBtn" type="button">继续报名</button>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

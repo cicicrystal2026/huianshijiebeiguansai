@@ -1,0 +1,229 @@
+:root {
+  --cyan: #22f7ff;
+  --cyan-soft: rgba(34, 247, 255, 0.22);
+  --pink: #ff2edf;
+  --yellow: #ffd54b;
+  --deep: #020b2f;
+  --ink: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 22% 20%, rgba(31, 241, 255, 0.26), transparent 28%),
+    radial-gradient(circle at 80% 80%, rgba(255, 46, 223, 0.2), transparent 30%),
+    linear-gradient(180deg, #000514 0%, #031a52 48%, #010517 100%);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: max(14px, env(safe-area-inset-top)) 14px max(14px, env(safe-area-inset-bottom));
+}
+
+.poster {
+  position: relative;
+  width: min(100%, 430px);
+  aspect-ratio: 385 / 578;
+  overflow: hidden;
+  border-radius: 0;
+  background: url("./assets/poster-template.png") center / cover no-repeat;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+}
+
+.poster::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 35%;
+  background: linear-gradient(180deg, transparent 0%, rgba(1, 6, 31, 0.38) 26%, rgba(1, 6, 31, 0.9) 100%);
+  pointer-events: none;
+}
+
+.signup-panel,
+.success-panel {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: clamp(18px, 4.7%, 26px);
+  width: min(75%, 294px);
+  transform: translateX(-50%);
+  border: 1px solid rgba(46, 247, 255, 0.62);
+  background:
+    linear-gradient(145deg, rgba(4, 21, 72, 0.94), rgba(2, 6, 35, 0.96)),
+    rgba(3, 9, 42, 0.96);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 0 22px rgba(32, 235, 255, 0.38),
+    0 10px 30px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(8px);
+}
+
+.signup-panel {
+  display: grid;
+  gap: 7px;
+  padding: 10px 12px 11px;
+}
+
+.panel-copy {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--yellow);
+  font-size: clamp(10px, 2.7vw, 12px);
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(255, 213, 75, 0.55);
+}
+
+h1,
+h2 {
+  margin: 0;
+  color: var(--cyan);
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(34, 247, 255, 0.7);
+}
+
+h1 {
+  font-size: clamp(20px, 6.3vw, 28px);
+  font-weight: 900;
+}
+
+h2 {
+  font-size: clamp(20px, 6vw, 26px);
+}
+
+.field {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 5px 8px;
+  border: 1px solid rgba(34, 247, 255, 0.42);
+  background: rgba(0, 15, 54, 0.82);
+}
+
+.field span {
+  color: #c8fbff;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.field input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.field input::placeholder {
+  color: rgba(210, 251, 255, 0.55);
+  font-weight: 500;
+}
+
+.field:focus-within {
+  border-color: var(--cyan);
+  box-shadow: 0 0 16px var(--cyan-soft);
+}
+
+.submit-btn,
+.secondary-btn {
+  min-height: 36px;
+  border: 0;
+  color: #08215d;
+  background: linear-gradient(90deg, #33fff5 0%, #ffe35a 100%);
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(34, 247, 255, 0.5);
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.btn-icon {
+  width: 14px;
+  height: 14px;
+  clip-path: polygon(0 0, 100% 45%, 55% 54%, 100% 100%, 0 68%, 38% 50%);
+  background: #08215d;
+}
+
+.form-message {
+  min-height: 15px;
+  margin: -2px 0 0;
+  color: #ff9df0;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.success-panel {
+  padding: 18px 16px 16px;
+  text-align: center;
+}
+
+.success-panel p {
+  margin: 8px 0 0;
+  color: #d9fdff;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.secondary-btn {
+  width: 100%;
+  margin-top: 13px;
+  font-size: 15px;
+}
+
+@media (max-width: 360px) {
+  .signup-panel,
+  .success-panel {
+    width: 78%;
+  }
+
+  .signup-panel {
+    gap: 6px;
+    padding: 9px 10px 10px;
+  }
+
+  .field {
+    min-height: 32px;
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+}
