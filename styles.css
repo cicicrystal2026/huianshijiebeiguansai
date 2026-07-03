@@ -41,7 +41,12 @@ input {
   width: min(100vw, 724px);
   aspect-ratio: 724 / 2172;
   min-height: 100vh;
-  background: url("./assets/poster.png") top center / 100% auto no-repeat;
+  background:
+    image-set(
+      url("./assets/poster.webp") type("image/webp"),
+      url("./assets/poster.png") type("image/png")
+    )
+    top center / 100% auto no-repeat;
   overflow: hidden;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.65);
 }
