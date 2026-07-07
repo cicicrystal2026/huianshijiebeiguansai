@@ -33,7 +33,7 @@ input {
   min-height: 100svh;
   display: grid;
   place-items: start center;
-  padding: 0;
+  padding: 200px 0;
 }
 
 .poster {
@@ -43,8 +43,8 @@ input {
   min-height: 100vh;
   background:
     image-set(
-      url("./assets/poster.webp?v=20260707-1") type("image/webp"),
-      url("./assets/poster.png?v=20260707-1") type("image/png")
+      url("./assets/poster.webp?v=20260707-2") type("image/webp"),
+      url("./assets/poster.png?v=20260707-2") type("image/png")
     )
     top center / 100% auto no-repeat;
   overflow: hidden;
@@ -87,7 +87,7 @@ input {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 38%;
+  width: 48%;
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
   border: 2px solid transparent;
@@ -256,7 +256,7 @@ input {
   border: 0;
 }
 
-@media (min-width: 725px) {
+@media (min-width: 794px) {
   .poster {
     margin: 0 auto;
   }
