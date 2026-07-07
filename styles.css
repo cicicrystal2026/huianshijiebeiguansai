@@ -33,7 +33,10 @@ input {
   min-height: 100svh;
   display: grid;
   place-items: start center;
-  padding: 200px 0;
+  padding:
+    max(88px, calc(env(safe-area-inset-top, 0px) + 32px))
+    0
+    max(96px, calc(env(safe-area-inset-bottom, 0px) + 64px));
 }
 
 .poster {
@@ -43,8 +46,8 @@ input {
   min-height: 100vh;
   background:
     image-set(
-      url("./assets/poster.webp?v=20260707-3") type("image/webp"),
-      url("./assets/poster.png?v=20260707-3") type("image/png")
+      url("./assets/poster.webp?v=20260707-4") type("image/webp"),
+      url("./assets/poster.png?v=20260707-4") type("image/png")
     )
     top center / 100% auto no-repeat;
   overflow: hidden;
