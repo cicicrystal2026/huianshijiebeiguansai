@@ -42,9 +42,9 @@ input {
   display: grid;
   place-items: start center;
   padding:
-    max(60px, calc(env(safe-area-inset-top, 0px) + 28px))
+    max(16px, calc(env(safe-area-inset-top, 0px) + 8px))
     0
-    max(72px, calc(env(safe-area-inset-bottom, 0px) + 48px));
+    max(32px, calc(env(safe-area-inset-bottom, 0px) + 24px));
 }
 
 .poster {
@@ -55,7 +55,7 @@ input {
   border-inline: 1px solid rgba(248, 213, 122, 0.18);
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.68) 48%, rgba(0, 0, 0, 0.38) 100%),
-    image-set(url("./assets/visual-backdrop.webp?v=20260707-6") type("image/webp")) top center / 100% auto no-repeat,
+    image-set(url("./assets/visual-backdrop.webp?v=20260707-7") type("image/webp")) top center / 100% auto no-repeat,
     linear-gradient(145deg, rgba(255, 215, 115, 0.13), transparent 28%),
     linear-gradient(215deg, rgba(203, 24, 17, 0.18), transparent 26%),
     linear-gradient(180deg, rgba(5, 5, 5, 0.96), rgba(9, 8, 5, 0.98));
