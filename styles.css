@@ -38,13 +38,13 @@ input {
 
 .poster {
   position: relative;
-  width: min(100vw, 724px);
-  aspect-ratio: 724 / 2172;
+  width: min(100vw, 793px);
+  aspect-ratio: 793 / 1983;
   min-height: 100vh;
   background:
     image-set(
-      url("./assets/poster.webp?v=20260706-1") type("image/webp"),
-      url("./assets/poster.png?v=20260706-1") type("image/png")
+      url("./assets/poster.webp?v=20260707-1") type("image/webp"),
+      url("./assets/poster.png?v=20260707-1") type("image/png")
     )
     top center / 100% auto no-repeat;
   overflow: hidden;
@@ -68,8 +68,8 @@ input {
 
 .session-choice {
   position: absolute;
-  left: 7.3%;
-  width: 10%;
+  left: 9%;
+  width: 8%;
   height: 3.25%;
   cursor: pointer;
   pointer-events: auto;
@@ -108,39 +108,39 @@ input {
 }
 
 .session-01 {
-  top: 24.86%;
+  top: 24.72%;
 }
 
 .session-02 {
-  top: 30.79%;
+  top: 32.39%;
 }
 
 .session-03 {
-  top: 36.75%;
+  top: 40.09%;
 }
 
 .session-04 {
-  top: 42.7%;
+  top: 47.81%;
 }
 
 .session-05 {
-  top: 48.18%;
+  top: 55.52%;
 }
 
 .field {
   position: absolute;
-  left: 8%;
-  width: 55.2%;
-  height: 2.34%;
+  left: 11.3%;
+  width: 47.7%;
+  height: 2.55%;
   z-index: 4;
 }
 
 .field-name {
-  top: 55.48%;
+  top: 64.9%;
 }
 
 .field-phone {
-  top: 58.1%;
+  top: 67.75%;
 }
 
 .field input {
@@ -166,10 +166,10 @@ input {
 
 .submit-btn {
   position: absolute;
-  left: 65.61%;
-  top: 56.03%;
-  width: 26%;
-  height: 4.14%;
+  left: 61.65%;
+  top: 65.55%;
+  width: 24.2%;
+  height: 4.65%;
   z-index: 4;
   border: 0;
   border-radius: 8px;
@@ -190,7 +190,7 @@ input {
 .form-message {
   position: absolute;
   left: 8%;
-  top: 60.72%;
+  top: 70.6%;
   width: 79%;
   min-height: 20px;
   margin: 0;
