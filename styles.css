@@ -546,3 +546,17 @@ input {
     min-height: 260px;
   }
 }
+
+.session-venue {
+  color: #f8d57a;
+  font-weight: 700;
+}
+
+.venue-notice {
+  margin: 6px auto 0;
+  max-width: 92%;
+  color: #f8d57a;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
+}
