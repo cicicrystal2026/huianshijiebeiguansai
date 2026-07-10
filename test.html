@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>报名接口测试</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, "Microsoft YaHei", sans-serif;
+        background: #f6f7f9;
+        color: #1f2937;
+      }
+      main {
+        max-width: 520px;
+        margin: 40px auto;
+        padding: 24px;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+      }
+      label,
+      button,
+      pre {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      label {
+        margin: 14px 0;
+        font-weight: 700;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 8px;
+        padding: 10px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font: inherit;
+      }
+      button {
+        margin-top: 18px;
+        padding: 12px;
+        border: 0;
+        border-radius: 6px;
+        background: #0f766e;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      pre {
+        min-height: 88px;
+        margin-top: 18px;
+        padding: 12px;
+        overflow: auto;
+        border-radius: 6px;
+        background: #111827;
+        color: #d1fae5;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>报名接口测试</h1>
+      <form id="form">
+        <label>
+          用户名
+          <input id="username" value="测试用户" />
+        </label>
+        <label>
+          手机号
+          <input id="phone" value="13444444444" />
+        </label>
+        <button type="submit">提交测试报名</button>
+      </form>
+      <pre id="result">等待提交...</pre>
+    </main>
+    <script>
+      const result = document.querySelector("#result");
+      document.querySelector("#form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        result.textContent = "正在提交...";
+
+        const response = await fetch("./api/register/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            eventName: "2026美加墨世界杯线下观赛招募",
+            sessions: ["04｜7月19日｜三四名决赛｜凌晨5:00"],
+            username: document.querySelector("#username").value.trim(),
+            phone: document.querySelector("#phone").value.trim(),
+            pageUrl: location.href,
+            submittedAt: new Date().toISOString(),
+          }),
+        });
+
+        const data = await response.json().catch(() => ({}));
+        result.textContent = JSON.stringify(data, null, 2);
+      });
+    </script>
+  </body>
+</html>
